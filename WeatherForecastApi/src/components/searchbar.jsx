@@ -1,67 +1,39 @@
-import React from 'react'
-import { useState } from 'react'
-
+import React from "react"
+import { useState } from "react"
 import {AsyncPaginate} from "react-select-async-paginate"
+import {geoApiOptions,url} from "../api"
 
 const SearchBar = ({onSearchChange}) => {
 
   const [search, setSearch] = useState(null)
 
-  const OPTIONS = [
-    {
-      value: 1,
-      label: "Audi"
-    },
-    {
-      value: 2,
-      label: "Mercedes"
-    },
-    {
-      value: 3,
-      label: "BMW"
+  const loadOptions = async (inputValue) => {
+    try {
+      const response = await fetch(`${url}/cities?minPopulation=1000000&namePrefix=${inputValue}`, geoApiOptions);
+      const result = await response.text();
+      console.log(result);
+    } catch (error) {
+      console.error(error);
     }
-  ];
+  }
 
-  const fakeData = async () => {
-    await new Promise(resolve => setTimeout(resolve, 1000));
-  
-    return {
-      results: OPTIONS,
-      has_more: false
-    };
-  };
-  
-  const loadOptions = async () => {
-    const response = await fakeData();
-  
-    return {
-      options: response.results,
-      hasMore: response.has_more
-    };
-  };
-
-  const handleChange = (data) => {
-
-    console.log(data);
+  const handleOnChange = (data) => {
     setSearch(data)
-
     onSearchChange(data);
 
   }
 
-  const [value, setValue] = useState({ value: 1, label: "Audi" });
 
   return (
     <div>
       
       <AsyncPaginate
       
-        placeholder="Type here"
+        placeholder="Search for city"
         debounceTimeout={600}
-        value={value}
+        value={search}
+        onChange={handleOnChange}
         loadOptions={loadOptions}
-        onChange={handleChange}
-
       />
 
     </div>
