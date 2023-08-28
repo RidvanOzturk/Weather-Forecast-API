@@ -3,7 +3,7 @@
 
 - A brief summary of the application is below.
 
-- 
+
 
 
 https://github.com/RidvanOzturk/Weather-Forecast-API/assets/61945190/45d08706-5ef3-4905-b9c0-0efad8812471
