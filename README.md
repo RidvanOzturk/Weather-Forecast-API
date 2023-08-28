@@ -1,5 +1,5 @@
 # Weather Forecast API Project
-##### I made a project that shows today and 1 week weather forecast with React.
+##### I made a project that shows today and a week weather forecast with React.
 
 - A brief summary of the application is below.
 
