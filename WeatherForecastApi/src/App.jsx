@@ -1,10 +1,10 @@
 import "./App.css";
 import SearchBar from "./components/search/searchbar";
 import CurrentWeather from "./components/current-weather/current-weather";
-import { WEATHER_API_KEY } from "./api";
+import { WEATHER_API_KEY, WEATHER_API_URL } from "./api";
 import { useState } from "react";
 function App() {
-  const [CurrentWeather, setCurrentWeather] = useState(null);
+  const [currentWeather, setCurrentWeather] = useState(null);
   const [forecast, setforecast] = useState(null);
 
   const handleOnSearchChange = (searchData) => {
@@ -27,13 +27,13 @@ function App() {
       })
       .catch((err) => console.log(err));
   }
-  console.log(CurrentWeather);
+  console.log(currentWeather);
   console.log(forecast);
 
   return (
     <div className="container">
       <SearchBar onSearchChange={handleOnSearchChange} />
-      <CurrentWeather />
+      <CurrentWeather/>
     </div>
   );
 }
