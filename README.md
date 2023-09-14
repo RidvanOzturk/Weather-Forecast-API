@@ -1,10 +1,8 @@
-# Weather Forecast API Project
-##### I made a project that shows today and a week weather forecast with React.
+# React + Vite
 
-- A brief summary of the application is below.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
+Currently, two official plugins are available:
 
-
-
-https://github.com/RidvanOzturk/Weather-Forecast-API/assets/61945190/45d08706-5ef3-4905-b9c0-0efad8812471
-
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
